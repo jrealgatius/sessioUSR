@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sessions d’estadística DAP-Cat</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jordi Real" />
+    <meta name="date" content="2021-12-14" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sessions d’estadística DAP-Cat
+## <br/> Aspectes de la investigació clínica relacionats amb l’estadística
+### Jordi Real
+### IDIAP Jordi Gol <br/> USR-BCN (UEMC I+D)
+### 2021-12-14
+
+---
+
+
+
+
+# Sessions d'estadística DAP Cat
+
+## De que parlarem?
+
+1. Programa de sessions
+
+  - Lectura de programa
+  - On el podeu trobar?
+  - Sintesis de cada sessió
+
+1. A proposit de la Reproducibilitat
+
+  - Sistema organitzatiu UEMC I+D
+  - Análisis conductual
+  - R-Markdown
+  - Github (Control de versions)
+
+---
+
+# [Sessions d'estadística](https://jrealgatius.github.io/SessionsMetode/Programa.html)
+
+Programa i material de sessions es poden trobar aquí: https://jrealgatius.github.io/SessionsMetode/Programa.html
+
+.pull-left[
+
+1. Estadística y sentido común
+
+1. Estadística Bayesiana
+
+1. Reproducibilidad
+
+1. Replicabilidad
+
+1. Inferencia causal
+
+1. Machine Learning
+
+1. Simulación y Coste-Efectividad
+
+1. Tratamiento de missings
+
+  
+  ]
+
+.pull-right[
+
+- José Miguel Martínez
+
+- Xavi Puig
+
+- Miguel A. Martinez-Beneito
+
+- Miguel A. Martinez-Beneito
+
+- Aleix Ruiz de Villa
+
+- Aleix Ruiz de Villa
+
+- Mireia Diaz
+
+- Guillem Pera
+
+
+]
+
+
+---
+# Missings
+
+### Patrons
+
+1. MCAR: P(Tener dato / Dato, X ) = P(Tener el dato)
+  - Se pierde una caja con encuestas
+  - Se borra accidentalmente un fichero con datos
+
+--
+
+1. MAR: P(Tener dato / Dato, X ) = P(Tener el dato / X)
+  - Los hombres recuerdan peor cuando vacunaron a sus hijos
+  - Los pacientes con cáncer de pulmón recuerdan mejor qué fumaban de jóvenes
+
+--
+
+1. MNAR: P(Tener dato) depende del dato
+  - Los trabajadores con más ingresos son más reservados en declarar cuánto ganan
+  - Votantes conservadores no revelan su intención de voto
+
+---
+
+# Missings
+
+## Conclusions
+
+- Reflexionemos por qué tenemos missings
+
+- Valoremos el patrón de missings, démosles la importancia que se merecen
+
+- Las observaciones con missing, ¿siguen algún patrón? Si es sí, seguro que No es MCAR
+
+- Intentar (¿rezar?) que los missings sean MAR (o MCAR)
+
+- Comparar los resultados con CCA e interpretar
+
+- NO esconder los missings (estamos haciendo CIENCIA)
+
+--
+
+- **Tener un estadístico cerca** ;-))
+
+
+---
+
+# Models de simulació i anàlisis de C-E
+**Mireia Diaz**
+
+1. Evaluaciones económicas
+
+2. Coste-efectividad en estudios clínicos
+
+3. Modelos de simulación
+
+4. Coste-efectividad en modelos de simulación
+
+
+---
+
+# Models de simulació i anàlisis de C-E
+
+![](figs/Evaluacion_economica_E_clinicos.png)
+
+---
+
+# Models de simulació i anàlisis de C-E
+
+![](figs/modelo_simulacion_figura.png)
+
+---
+
+# Models de simulació i anàlisis de C-E
+
+![](figs/modelo_simulacion.png)
+---
+
+# Estadística Bayesiana 
+
+- Aplica el teorema de Bayes per fer inferencia $$P(A/B)=\frac{P(B/A)}{P(B)}P(A) $$  
+
+  1. Partint d'uns coneixements previs: P(hipòtesis)
+
+--
+
+  2. Observem "OR" "RR" "efecte" mostral
+
+--
+
+  3. Actualitzem probabilitat priori: Posteriori
+  
+  
+  $$P(Hipotesis/dades)=\frac{P(dades/Hipotesis)}{P(dades)}P(Hipotesis) $$
+
+
+![](figs/Bayesian_vs_Freuquentist.png)
+
+
+
+
+
+---
+
+# Estadística Bayesiana 
+
+&lt;!-- ![](figs/bayes-vs-frequentist.png){width=50%; height=50%} --&gt;
+
+&lt;img src="figs/bayes-vs-frequentist.png" width="75%" /&gt;
+
+---
+
+# Estadística Bayesiana
+
+![](figs/ComparisonBayesian_Frequentist_data_analysis.jpg)
+
+---
+
+# Estadística Bayesiana 
+
+- &lt;p style="color:red"&gt;Subjectivitat de la informació a priori&lt;/p&gt;
+
+- &lt;p style="color:red"&gt;Més díficil trencar amb esquemes establerts&lt;/p&gt;
+
+--
+
+- &lt;p style="color:green"&gt;Permet integrar coneixement anterior + present&lt;/p&gt;
+
+--
+
+- &lt;p style="color:green"&gt;Permet l'anàlisis seqüencial. No requereix mida de mostra. Més flexible&lt;/p&gt;
+
+--
+
+- &lt;p style="color:green"&gt;Interpretació més natural, proper al pensament científic&lt;/p&gt;
+
+- &lt;p style="color:red"&gt;Complexitat de cálcul&lt;/p&gt;
+
+--
+
+- &lt;p style="color:orange"&gt;La verosimilitud de la hipòtesis "menys" depenent de la n&lt;/p&gt;
+
+- &lt;p style="color:green"&gt;Probabilitat de cada hipòtesis és complementaria&lt;/p&gt;
+
+--
+
+- &lt;p style="color:red"&gt; Necessites un estadístic a prop&lt;/p&gt;
+
+
+---
+
+# Machine Learning i inferencia causal
+
+**Aleix Ruiz**
+
+![](figs/ML_Causal_inference.png)
+
+
+
+
+---
+
+# Machine Learning
+
+
+![](figs/Machine_learning.jpg)
+
+
+
+---
+
+# Reproducibilitat/Replicabilitat 
+
+**Miguel A. Martinez-Beneito**
+
+![](figs/Reproducibilidad.png)
+---
+
+# A propostit de la reproducibilitat
+
+
+You are an human and you will make mistakes. No matter how smart you are, how careful you are, how much coffee you have had to drink, you will make mistakes when you create tables by hand. Sorry, but them’s the facts
+
+---
+
+# A propostit de la reproducibilitat 
+
+#### Com ens organitzem a la USR dins de la UEMC I+D?
+
+***Estandardització de projectes***
+
+- Sistema de carpetes únic
+
+      - codi / dades / docs / resultats
+
+- Anàlisis conductual 
+
+
+- [GitHub](https://github.com/USR-DAPCAT)
+
+    - codi + conductors 
+    
+- Sofware (RMarkdown)
+
+
+
+---
+
+# Sistema d'anàlisis de dades basat en conductors
+
+![](figs/sistema_basat_conductors.png)
+
+
+---
+
+# Anàlisis conductual
+
+- 4 fases per projecte: Lectura- Agregació (1) , Preparació (2), Anàlisis (3) i Edició-Presentació (4)
+ 
+- Cada fase es pot executar de manera independent
+
+- Mostres manejables
+
+- Scripts basats en funcions i conductors
+
+---
+
+## Conductors
+
+
+- Conductor es un fitxer organitzat amb informació parametritzada en relació a cada projecte (xls):
+ 
+    - [Cataleg de codis i agregadors](dades/CATALEG_TMS.xlsx)
+    
+    - [Conductor de variables](dades/conductor_variables.xls)
+
+- Els conductors son editables per l'investigador
+
+---
+
+## Conductor cataleg d'agregadors
+
+<div id="htmlwidget-943f9237f79ab3891dff" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-943f9237f79ab3891dff">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316"],["diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","diagnostic","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","farmacs","exploracions","exploracions","exploracions","exploracions","exploracions"],["ALT_PSIC","ARTPER","BIPOL","CI","DEMENCIA","DEP_REC","DER_COR","DISLP","DM1","DM2","DMALT","HTA","IC","MVC","NEFROP","NEUROP","OBES","PR_EEII","RETINOP","SQZ","TABAC","ATC","A10BA02","A10BA03","A10BD03","A10BD05","A10BD07","A10BD08","A10BD10","A10BD11","A10BB01","A10BB02","A10BB07","A10BB08","A10BB09","A10BB12","A10BB91","A10BD04","A10BD06","A10BF01","A10BF02","A10BD07","A10BD08","A10BD10","A10BD11","A10BH01","A10BH02","A10BH03","A10BH05","A10BD03","A10BD04","A10BD05","A10BD06","A10BG02","A10BG03","A10BX02","A10BX03","A10AB01","A10AB04","A10AB05","A10AB06","A10AC01","A10AC04","A10AD01","A10AD04","A10AD05","A10AE01","A10AE04","A10AE05","A10AF01","A10BX09","A10BX01","A10BX04","A10BX07","A10BX10","C02LA01","C02LA50","C02LA51","C03DA01","C03DA04","C03EA04","C07CA02","C07CB03","C09BA01","C09BA02","C09BA03","C09BA04","C09BA05","C09BA06","C09BA07","C09BA08","C09BA09","C09DA01","C09DA02","C09DA03","C09DA04","C09DA06","C09DA07","C09DA08","C03CA01","C03CA02","C03CA03","C03CA04","C03CB01","C03CB02","C03EB01","C03EB02","C03AA03","C03AX91","C03EA01","C03EA13","C07BB02","C07BB03","C07BB07","C07BB12","C07DB01","C09DX01","C09DX03","C09XA52","C03BA04","C03EA06","C03BA10","C03BA11","C02AB01","C02AC01","C02AC05","C02CA01","C02CA04","C02DB02","C02DC01","C02LA01","C02LA50","C02LA51","C08CA01","C08CA02","C08CA04","C08CA05","C08CA06","C08CA07","C08CA08","C08CA09","C08CA11","C08CA12","C08CA13","C09BB02","C09BB05","C09BB06","C09BB10","C09BB12","C09DB01","C09DB02","C09DB04","C09DX01","C09DX03","C10BX03","C08DA01","C08DB01","C09CA01","C09CA02","C09CA03","C09CA04","C09CA06","C09CA07","C09CA08","C09DA01","C09DA02","C09DA03","C09DA04","C09DA06","C09DA07","C09DA08","C09DB01","C09DB02","C09DB04","C09DX01","C09DX03","C07AB02","C07AB03","C07AB04","C07AB07","C07AB08","C07AB12","C07BB02","C07BB03","C07BB07","C07BB12","C07CB03","C07DB01","C07FB02","C07FB03","C07AA02","C07AA05","C07AA07","C07AA12","C07AA15","C07AG01","C07AG02","C07CA02","C07FA05","C09AA01","C09AA02","C09AA03","C09AA04","C09AA05","C09AA06","C09AA07","C09AA08","C09AA09","C09AA10","C09AA11","C09AA16","C09BA01","C09BA02","C09BA03","C09BA04","C09BA05","C09BA06","C09BA07","C09BA08","C09BA09","C09BB02","C09BB05","C09BB06","C09BB10","C09BB12","C09XA02","C09XA52","C10BX06","C10AC01","C10AC02","C10AC03","C10AC04","C10AD52","C10AX04","C10AX06","C10AX09","C10AX91","C10AX95","C10BA02","C10AA01","C10AA02","C10AA03","C10AA04","C10AA05","C10AA06","C10AA07","C10AA08","C10BA02","C10BA03","C10BX03","C10AB02","C10AB04","C10AB05","C10AB91","C10BA03","B01AX05","B01AA03","B01AA07","B01AB01","B01AB04","B01AB05","B01AB06","B01AB10","B01AB12","B01AF01","B01AF02","B01AX06","B01AE07","B01AC01","B01AC04","B01AC05","B01AC06","B01AC07","B01AC08","B01AC18","B01AC22","B01AC23","B01AC24","B01AC30","C10BX06","N05AA01","N05AA02","N05AB02","N05AB03","N05AB06","N05AB08","N05AC01","N05AC02","N05AC04","N05AD01","N05AE03","N05AE04","N05AF05","N05AG02","N05AH01","N05AH02","N05AH03","N05AH04","N05AH05","N05AH06","N05AL01","N05AL03","N05AL05","N05AL06","N05AL07","N05AN01","N05AX08","N05AX12","N05AX13","N05AX09","N05AD08","CBRET","CBPEROD","POLSPER","MONOFIL","ECG"],["Altres trastrons psiquiàtrics","Aretriopatia perifèrica","Bipolariat","Cardiopatia isquèmica","Demències","Depressió recurrent","Derivacions coronàries","Dislipèmia","Diabetes Mellitus 1","Diabetes Mellitus 2","Diabetes Mielitus altres","HTA","Insuficiència Cardíaca","AVC","Nefropatia","Neuropatia","Obesitat","Procediments EEII","Retinopatia","Esquizofrènia","Tabaquisme","DESC_ATC","Metformina","Buformina","Metformina y rosiglitazona","Metformina y pioglitazona","Metformina y sitagliptina","Metformina y vildagliptina","Metformina y Saxagliptina","Metformina y linagliptina","Glibenclamida","Clorpropamida","Glipizida","Gliquidona","Gliclazida","Glimepirida","Glisentida","Glimepirida y rosiglitazona","Glimepirida y pioglitazona","Acarbosa","Miglitol","Metformina y sitagliptina","Metformina y vildagliptina","Metformina y Saxagliptina","Metformina y linagliptina","Sitagliptina","Vildagliptina","Saxagliptina","Linagliptina","Metformina y rosiglitazona","Glimepirida y rosiglitazona","Metformina y pioglitazona","Glimepirida y pioglitazona","Rosiglitazona","Pioglitazona","Repaglinida","Nateglinida","Insulina (humana)","Insulina lispro","Insulina asparta","Insulina glulisina","Insulina (humana)","Insulina lispro protamina","Insulina (humana)","Insulina lispro","Insulina asparta","Insulina (humana)","Insulina glargina","Insulina detemir","Insulina (humana)","Dapaglifozina","Goma guar","Exenatida","Liraglutida","lixisenatide","Reserpina y diureticos","Combinacion de alcaloides de la rauwolfia y diureticos, incluyendo otras combinaciones","Reserpina y diureticos, combinaciones con otras farmacos","Espironolactona","Eplerenona","Altizida y agentes ahorradores de potasio","Oxprenolol y otros diureticos","Atenolol y otros diureticos","Captopril y diureticos","Enalapril y diureticos","Lisinopril y diureticos","Perindopril y diureticos","Ramipril y diureticos","Quinapril y diureticos","Benazepril y diureticos","Cilazapril y diureticos","Fosinopril y diureticos","Losartan y diureticos","Eprosartan y diureticos","Valsartan y diureticos","Irbesartan y diureticos","Candesartan y diureticos","Telmisartan y diureticos","Olmesartan medoxomilo y diureticos","Furosemida","Bumetanida","Piretanida","Torasemida","Furosemida y potasio","Bumetanida y potasio","Furosemida y agentes ahorradores de potasio","Bumetanida y agentes ahorradores de potasio","Hidroclorotiazida","Teclotiazida, combinaciones con","Hidroclorotiazida y agentes ahorradores de potasio","Bendroflumetiazida y agentes ahorradores de potasio","Metoprolol y tiazidas","Atenolol y tiazidas","Bisoprolol y tiazidas","Nebivolol y tiazidas","Atenolol, tiazidas y otros diureticos","Valsartan, amlodipino e hidroclorotiazida","Olmesartan medoxomilo, amlodipino e hidroclorotiazida","Aliskireno e hidroclorotiazida","Clortalidona","Clortalidona y agentes ahorradores de potasio","Xipamida","Indapamida","Metildopa (levogira)","Clonidina","Moxonidina","Prazosina","Doxazosina","Hidralazina","Minoxidil","Reserpina y diureticos","Combinacion de alcaloides de la rauwolfia y diureticos, incluyendo otras combinaciones","Reserpina y diureticos, combinaciones con otras farmacos","Amlodipino","Felodipino","Nicardipino","Nifedipino","Nimodipino","Nisoldipino","Nitrendipino","Lacidipino","Manidipino","Barnidipino","Lercanidipino","Enalapril y lercanidipino","Ramipril y felodipino","Enalapril y nitrendipino","Trandolapril y verapamilo","Delapril y manidipino","Valsartan y Amlodipino","Olmesartan medoxomilo y amlodipino","Telmisartan y amlodipino","Valsartan, amlodipino e hidroclorotiazida","Olmesartan medoxomilo, amlodipino e hidroclorotiazida","Atorvastatina y Amlodipino","Verapamilo","Diltiazem","Losartan","Eprosartan","Valsartan","Irbesartan","Candesartan","Telmisartan","Olmesartan medoxomilo","Losartan y diureticos","Eprosartan y diureticos","Valsartan y diureticos","Irbesartan y diureticos","Candesartan y diureticos","Telmisartan y diureticos","Olmesartan medoxomilo y diureticos","Valsartan y Amlodipino","Olmesartan medoxomilo y amlodipino","Telmisartan y amlodipino","Valsartan, amlodipino e hidroclorotiazida","Olmesartan medoxomilo, amlodipino e hidroclorotiazida","Metoprolol","Atenolol","Acebutolol","Bisoprolol","Celiprolol","Nebivolol","Metoprolol y tiazidas","Atenolol y tiazidas","Bisoprolol y tiazidas","Nebivolol y tiazidas","Atenolol y otros diureticos","Atenolol, tiazidas y otros diureticos","Metoprolol y otros antihipertensivos","Atenolol y otros antihipertensivos","Oxprenolol","Propranolol","Sotalol","Nadolol","Carteolol","Labetalol","Carvedilol","Oxprenolol y otros diureticos","Propranolol y otros antihipertensivos","Captopril","Enalapril","Lisinopril","Perindopril","Ramipril","Quinapril","Benazepril","Cilazapril","Fosinopril","Trandolapril","Espirapril","Imidapril","Captopril y diureticos","Enalapril y diureticos","Lisinopril y diureticos","Perindopril y diureticos","Ramipril y diureticos","Quinapril y diureticos","Benazepril y diureticos","Cilazapril y diureticos","Fosinopril y diureticos","Enalapril y lercanidipino","Ramipril y felodipino","Enalapril y nitrendipino","Trandolapril y verapamilo","Delapril y manidipino","Aliskireno","Aliskireno e hidroclorotiazida","atorvastatin, acetylsalicylic acid and ramipril","Colestiramina","Colestipol","Colextran","Colesevelam","Acido nicotinico, combinaciones con","Benfluorex","Trigliceridos omega-3, incluidos otros esteres y acidos","Ezetimiba","Sulodexida","Sultosilato de piperazina","Simvastatina y ezetimiba","Simvastatina","Lovastatina","Pravastatina","Fluvastatina","Atorvastatina","Cerivastatina","Rosuvastatina","Pitavastatina","Simvastatina y ezetimiba","Pravastatina y fenofibrato","Atorvastatina y Amlodipino","Bezafibrato","Genfibrozilo","Fenofibrato","Binifibrato","Pravastatina y fenofibrato","Fondaparinux","Warfarina","Acenocumarol","Heparina","Dalterapina","Enoxaparina","Nadroparina","Tinzaparina","Bemiparina","Rivaroxaban","Apixaban","Rivaroxaban","Dabigatran etexilato","Ditazol","Clopidogrel","Ticlopidina","Acido acetilsalicilico","Dipiridamol","Carbasalato de calcio","Triflusal","Prasugrel","Cilostazol","Ticagrelor","Combinaciones","atorvastatin, acetylsalicylic acid and ramipril","Clorpromazina","Levomepromazina","Flufenazina","Perfenazina","Trifluoperazina","Tioproperazina","Periciazina","Tioridazina","Pipotiazina","Haloperidol","Sertindol","Ziprasidona","Zuclopentixol","Pimozida","Loxapina","Clozapina","Olanzapina","Quetiapina","Asenapina","Clotiapina","Sulpirida","Tiaprida","Amisulprida","Veraliprida","Levosulpirida","Litio","Risperidona","Aripiprazol","Paliperidona","Clotiapina","Droperidol","Cribratge de retinopatia diabètica","Cribratge de malaltia periodontal","Exploració de polsos perifèrics","Cribratge de neuropatia diabètica i exploració del peu diabètic","Electrocardiograma"],["ALT_PSIC","ARTPER","BIPOL","CI","DEMENCIA","DEP_REC","DER_COR","DISLP","DM1","DM2","DMALT","HTA","IC","MVC","NEFROP","NEUROP","OBES","PR_EEII","RETINOP","SQZ","TABAC","agr","MTF","MTF","MTF","MTF","MTF","MTF","MTF","MTF","SU","SU","SU","SU","SU","SU","SU","SU","SU","INHAGLU","INHAGLU","IDPP4","IDPP4","IDPP4","IDPP4","IDPP4","IDPP4","IDPP4","IDPP4","GLITAZN","GLITAZN","GLITAZN","GLITAZN","GLITAZN","GLITAZN","SU","SU","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","INSULINA","OTHER_DM","OTHER_DM","GLP1","GLP1","GLP1","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","DIURETIC","ABK","ABK","ABK","ABK","ABK","ABK","ABK","ABK","ABK","ABK","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCADH","ANTCANDH","ANTCANDH","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","ARA2","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","BBKNCORS","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","IECA","INHREN","INHREN","IECA","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","DL_ALT","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","ESTATINA","FIBRAT","FIBRAT","FIBRAT","FIBRAT","FIBRAT","ALT_ACO","ANT_VITK","ANT_VITK","HEPARINA","HEPARINA","HEPARINA","HEPARINA","HEPARINA","HEPARINA","INH_FcXa","INH_FcXa","INH_FcXa","INH_TROM","AAG","AAG","AAG","AAG","AAG","AAG","AAG","AAG","AAG","AAG","AAG","AAG","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","APSI","CBRET","CBPEROD","POLSPER","MONOFIL","ECG"],["TMS",null,"TMS",null,null,"TMS",null,null,null,null,null,null,null,null,null,null,null,null,null,"TMS",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>domini<\/th>\n      <th>cod<\/th>\n      <th>descripcio<\/th>\n      <th>agr<\/th>\n      <th>agr2<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+## Conductor llista de variables
+
+<div id="htmlwidget-405de7e3ba57e6a99877" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-405de7e3ba57e6a99877">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152"],[1,2,3,4,5,6,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151],["idp","dtindex","year_index","ANY_NAIX","SEXE","age","age.grup","age.grup2","SITUACIO","DATA_SIT","QMEDEA","temps_FU","PROF","UP","VIS2007","VIS2008","VIS2009","VIS2010","VIS2011","VIS2012","VIS2013","VIS2014","VIS2007_mf","VIS2008_mf","VIS2009_mf","VIS2010_mf","VIS2011_mf","VIS2012_mf","VIS2013_mf","VIS2014_mf","VIS2007_inf","VIS2008_inf","VIS2009_inf","VIS2010_inf","VIS2011_inf","VIS2012_inf","VIS2013_inf","VIS2014_inf","VIS2007_odo","VIS2008_odo","VIS2009_odo","VIS2010_odo","VIS2011_odo","VIS2012_odo","VIS2013_odo","VIS2014_odo","DDIAGDM","DBAIXADM","DG.TMS","Grup","DG.SQZ","DG.BIPOL","DG.DEP_REC","DG.ALT_PSIC","DG.ANTPSICO_TMS","DG.ARTPER","DG.CI","DG.DEMENCIA","DG.DER_COR","DG.DISLP","DG.DM1","DG.DM2","DG.DMALT","DG.HTA","DG.IC","DG.MVC","DG.NEFROP","DG.NEUROP","DG.OBES","DG.PR_EEII","DG.RETINOP","DG.TABAC","FP.AAG","FP.ABK","FP.ANT_VITK","FP.ANTCADH","FP.ANTCANDH","FP.APSI","FP.ARA2","FP.BBKCORS","FP.BBKNCORS","FP.DIURETIC","FP.DL_ALT","FP.ESTATINA","FP.FIBRAT","FP.GLITAZN","FP.HEPARINA","FP.IDPP4","FP.IECA","FP.INHAGLU","FP.INHREN","FP.INSULINA","FP.MTF","FP.SU","FD.AAG","FD.ABK","FD.ANT_VITK","FD.ANTCADH","FD.ANTCANDH","FD.APSI","FD.ARA2","FD.BBKCORS","FD.BBKNCORS","FD.DIURETIC","FD.DL_ALT","FD.ESTATINA","FD.FIBRAT","FD.GLITAZN","FD.HEPARINA","FD.IDPP4","FD.IECA","FD.INHAGLU","FD.INHREN","FD.INSULINA","FD.MTF","FD.SU","CKDEPI.valor","COLHDL.valor","COLLDL.valor","COLTOT.valor","CREAT.valor","FC.valor","HBA1C.valor","IMC.valor","PAD.valor","PAS.valor","QAC.valor","REGICOR.valor","TABAC.valor","CKDEPI.dies","COLHDL.dies","COLLDL.dies","COLTOT.dies","CREAT.dies","FC.dies","HBA1C.dies","IMC.dies","PAD.dies","PAS.dies","QAC.dies","REGICOR.dies","TABAC.dies","CBRET.basal","CBPEROD.basal","POLSPER.basal","MONOFIL.basal","ECG.basal","CBRET.FU","CBPEROD.FU","POLSPER.FU","MONOFIL.FU","ECG.FU"],[null,null,null,null,"Sexe","Edat","Grup d'edat","Grup d'edat",null,null,"MEDEA","Temps lliure de mortalitat",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"TMS","Grup TMS","Esquizofrènia","Bipolariat","Depressió recurrent","Altres trastrons psiquiàtrics","Antecedents antipsicotics (&lt;=65a)","Aretriopatia perifèrica","Cardiopatia isquèmica","Demències","Derivacions coronàries","Dislipèmia","Diabetes Mellitus 1","Diabetes Mellitus 2","Diabetes Mielitus altres","HTA","Insuficiència Cardíaca","AVC","Nefropatia","Neuropatia","Obesitat","Procediments EEII","Retinopatia","Tabaquisme",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Smoking",null,null,null,null,null,null,null,null,null,null,null,null,null,"Cribratge de retinopatia diabètica  (Baseline)","Cribratge de malaltia periodontal (Baseline)","Exploració de polsos perifèrics (Baseline)","Cribratge de neuropatia diabètica i exploració del peu diabètic (Baseline)","Electrocardiograma (Baseline)","Cribratge de retinopatia diabètica (Seguiment)","Cribratge de malaltia periodontal (Seguiment)","Exploració de polsos perifèrics (Seguiment)","Cribratge de neuropatia diabètica i exploració del peu diabètic (Seguiment)","Electrocardiograma (Seguiment)"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,1,1,1,1,1,2,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,21,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,67,68,69,70,71,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,1,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,1,1,null,2,3,3,3,4,5,6,7,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,150,151,152,153,154,155,156,157,158,159,160,161,162,null,null,null,null,null,null,null,null,null,null,null,null,null,163,164,165,166,167,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"(5-Inf)","(15-150)","(50-600)","120-1000","(0.2-15)","(0-230)","(3.5-20.5)","(10-60)",null,null,"(0.5-2000)","(0-100)",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Control",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,2,3,4,5],[null,null,null,null,2,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,2,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6,null,null,8,null,null,null,5,7,8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,2,1,null,null,null,null,3,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6,null,null,8,null,null,null,5,7,8,null,null,8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,9,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>camp<\/th>\n      <th>descripcio<\/th>\n      <th>factorSINO<\/th>\n      <th>TMS<\/th>\n      <th>baseline<\/th>\n      <th>rang_valid<\/th>\n      <th>refcat<\/th>\n      <th>cribatges<\/th>\n      <th>ajust1<\/th>\n      <th>ajust2<\/th>\n      <th>ajust3<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5,6,9,10,11,12]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+## Funcions
+
+- Un conjunt d'ordres que realiza una tasca concreta
+
+- Una funció te uns arguments d'entrada i un resultat de sortida
+
+- Llista de 170 functions (6500 lines de codi)
+
+- El cataleg de funcions es obert i public penjat en [github](https://github.com/jrealgatius/LLEPALI/blob/master/funcions_propies.R)
+
+- Manteniment i actualitzacions a mesura que es fan projectes
+
+- Exemples: 
+
+  - recode_to_missings(conductor_variables,rang = "rang_valid")
+  
+  - Etiquetar_valors()
+  
+  - forest_plot()
+  
+---
+
+## Característiques i principis anàlisis conductual
+
+- Principi mínim-max
+
+--
+
+- Compartible / reconeixible (**Reproduible**)
+
+--
+
+- Minimitzar errades
+
+  - Identificar errades
+  - correccións
+
+--
+  
+- Flexible i versionable a canvis de criteris
+
+- Millora el control de tots els procesos
+
+- Documentant totes les definicions
+
+- El nucli de l'anàlisi recau en el conductor
+
+- Millorar en eficiència i qualitat del anàlisi i la investigació
+
+
+---
+
+class: center, middle
+
+# Gràcies!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
