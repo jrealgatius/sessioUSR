@@ -21,8 +21,31 @@ options(htmltools.dir.version = FALSE)
 
 library(dplyr)
 library(DT)
+library(qrcode)
+
+
 
 ```
+
+
+---
+class: inverse, center, middle
+
+# Sessions d'estadística
+https://jrealgatius.github.io/sessioUSR/presentacio.html
+
+```{r, include=T, echo=FALSE, out.width="50%"}
+
+qr<-qrcode::qr_code("https://jrealgatius.github.io/sessioUSR/presentacio.html")
+
+plot(qr)
+
+
+```
+
+
+
+---
 
 # Sessions d'estadística DAP Cat
 
@@ -33,6 +56,8 @@ library(DT)
   - Lectura de programa
   - On el podeu trobar?
   - Sintesis de cada sessió
+
+--
 
 1. A proposit de la Reproducibilitat
 
@@ -51,19 +76,19 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 1. Estadística y sentido común
 
-1. Estadística Bayesiana
+1. [Estadística Bayesiana](https://github.com/jrealgatius/SessionsMetode/tree/main/s2)
 
-1. Reproducibilidad
+1. [Reproducibilidad](https://github.com/jrealgatius/SessionsMetode/tree/main/s3)
 
-1. Replicabilidad
+1. [Replicabilidad](https://github.com/jrealgatius/SessionsMetode/tree/main/s4)
 
-1. Inferencia causal
+1. [Inferencia causal](https://github.com/jrealgatius/SessionsMetode/tree/main/s5)
 
-1. Machine Learning
+1. [Machine Learning](https://github.com/jrealgatius/SessionsMetode/tree/main/s6)
 
-1. Simulación y Coste-Efectividad
+1. [Simulación y Coste-Efectividad](https://github.com/jrealgatius/SessionsMetode/tree/main/s7)
 
-1. Tratamiento de missings
+1. [Tratamiento de missings](https://github.com/jrealgatius/SessionsMetode/tree/main/s8)
 
   
   ]
@@ -91,7 +116,7 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 
 ---
-# Missings
+# [Missings](https://github.com/jrealgatius/SessionsMetode/tree/main/s8)
 
 ### Patrons
 
@@ -113,7 +138,7 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 ---
 
-# Missings
+# [Missings](https://github.com/jrealgatius/SessionsMetode/tree/main/s8)
 
 ## Conclusions
 
@@ -136,7 +161,7 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 ---
 
-# Models de simulació i anàlisis de C-E
+# [Models de simulació i anàlisi de C-E](https://github.com/jrealgatius/SessionsMetode/tree/main/s7)
 **Mireia Diaz**
 
 1. Evaluaciones económicas
@@ -150,24 +175,24 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 ---
 
-# Models de simulació i anàlisis de C-E
+# [Models de simulació i anàlisi de C-E](https://github.com/jrealgatius/SessionsMetode/tree/main/s7)
 
 ![](figs/Evaluacion_economica_E_clinicos.png)
 
 ---
 
-# Models de simulació i anàlisis de C-E
+# [Models de simulació i anàlisi de C-E](https://github.com/jrealgatius/SessionsMetode/tree/main/s7)
 
 ![](figs/modelo_simulacion_figura.png)
 
 ---
 
-# Models de simulació i anàlisis de C-E
+# [Models de simulació i anàlisi de C-E](https://github.com/jrealgatius/SessionsMetode/tree/main/s7)
 
 ![](figs/modelo_simulacion.png)
 ---
 
-# Estadística Bayesiana 
+# [Estadística Bayesiana](https://github.com/jrealgatius/SessionsMetode/tree/main/s2)
 
 - Aplica el teorema de Bayes per fer inferencia $$P(A/B)=\frac{P(B/A)}{P(B)}P(A) $$  
 
@@ -193,7 +218,7 @@ Programa i material de sessions es poden trobar aquí: https://jrealgatius.githu
 
 ---
 
-# Estadística Bayesiana 
+# [Estadística Bayesiana](https://github.com/jrealgatius/SessionsMetode/tree/main/s2)
 
 <!-- ![](figs/bayes-vs-frequentist.png){width=50%; height=50%} -->
 
@@ -206,13 +231,13 @@ knitr::include_graphics("figs/bayes-vs-frequentist.png")
 
 ---
 
-# Estadística Bayesiana
+# [Estadística Bayesiana](https://github.com/jrealgatius/SessionsMetode/tree/main/s2)
 
 ![](figs/ComparisonBayesian_Frequentist_data_analysis.jpg)
 
 ---
 
-# Estadística Bayesiana 
+# [Estadística Bayesiana](https://github.com/jrealgatius/SessionsMetode/tree/main/s2)
 
 - <p style="color:red">Subjectivitat de la informació a priori</p>
 
@@ -245,7 +270,7 @@ knitr::include_graphics("figs/bayes-vs-frequentist.png")
 
 ---
 
-# Machine Learning i inferencia causal
+# [Machine Learning](https://github.com/jrealgatius/SessionsMetode/tree/main/s6) i [inferencia causal](https://github.com/jrealgatius/SessionsMetode/tree/main/s5)
 
 **Aleix Ruiz**
 
@@ -256,16 +281,15 @@ knitr::include_graphics("figs/bayes-vs-frequentist.png")
 
 ---
 
-# Machine Learning
+# [Machine Learning](https://github.com/jrealgatius/SessionsMetode/tree/main/s6)
 
 
 ![](figs/Machine_learning.jpg)
 
 
-
 ---
 
-# Reproducibilitat/Replicabilitat 
+# [Reproducibilitat](https://github.com/jrealgatius/SessionsMetode/tree/main/s3)/[Replicabilitat](https://github.com/jrealgatius/SessionsMetode/tree/main/s4)
 
 **Miguel A. Martinez-Beneito**
 
